@@ -11,6 +11,18 @@
 
 **Experience SketchFlow in action:** [https://sketch-flow-mongo.vercel.app/](https://sketch-flow-mongo.vercel.app/)
 
+## 📸 Screenshots
+
+<div align="center">
+  <img src="screenshots/Screenshot 2025-06-24 104901.png" alt="SketchFlow Dashboard" width="45%" />
+  <img src="screenshots/Screenshot 2025-06-24 104817.png" alt="SketchFlow Workspace" width="45%" />
+  <br />
+  <img src="screenshots/Screenshot 2025-06-24 104539.png" alt="SketchFlow Landing Page" width="45%" />
+  <img src="screenshots/Screenshot 2025-06-24 104510.png" alt="SketchFlow Note Management" width="45%" />
+  <br />
+  <img src="screenshots/Screenshot 2025-06-24 104500.png" alt="SketchFlow Drawing Interface" width="90%" />
+</div>
+
 ## 📖 Overview
 
 SketchFlow is a comprehensive note-taking application that combines the power of text-based notes with advanced drawing capabilities. Built with modern web technologies, it provides an intuitive interface for creating, organizing, and collaborating on visual content.
