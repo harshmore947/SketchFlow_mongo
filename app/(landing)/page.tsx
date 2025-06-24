@@ -32,13 +32,23 @@ export default function Home() {
               Continue to Dashboard
             </Button>
           ) : (
-            <Button
-              className="h-14 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold transition-colors"
-              size="lg"
-              onClick={() => alert("Show Auth Dialog")}
-            >
-              Get Started
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                className="h-14 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold transition-colors"
+                size="lg"
+                onClick={() => router.push("/login")}
+              >
+                Login
+              </Button>
+              <Button
+                variant="outline"
+                className="h-14 border-border text-foreground px-8 py-4 rounded-full text-lg font-semibold transition-colors hover:bg-muted"
+                size="lg"
+                onClick={() => router.push("/register")}
+              >
+                Sign Up
+              </Button>
+            </div>
           )}
         </div>
       </section>
@@ -143,28 +153,38 @@ export default function Home() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             {session?.user ? (
-              <Button
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold transition-colors"
-                onClick={() => router.push("/dashboard")}
-              >
-                Go to Dashboard
-              </Button>
+              <>
+                <Button
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold transition-colors"
+                  onClick={() => router.push("/dashboard")}
+                >
+                  Go to Dashboard
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border-border text-foreground px-8 py-4 rounded-full text-lg font-semibold transition-colors hover:bg-muted"
+                  onClick={() => router.push("/dashboard")}
+                >
+                  Create New Note
+                </Button>
+              </>
             ) : (
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold transition-colors">
-                Get Started
-              </Button>
+              <>
+                <Button
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold transition-colors"
+                  onClick={() => router.push("/register")}
+                >
+                  Get Started Free
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border-border text-foreground px-8 py-4 rounded-full text-lg font-semibold transition-colors hover:bg-muted"
+                  onClick={() => router.push("/login")}
+                >
+                  Already have an account? Login
+                </Button>
+              </>
             )}
-            <Button
-              variant="outline"
-              className="border-border text-foreground px-8 py-4 rounded-full text-lg font-semibold transition-colors hover:bg-muted"
-              onClick={() => {
-                if (session?.user) {
-                  router.push("/dashboard");
-                }
-              }}
-            >
-              {session?.user ? "Create New Note" : "Learn More"}
-            </Button>
           </div>
         </div>
       </section>

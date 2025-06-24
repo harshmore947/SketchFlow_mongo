@@ -53,7 +53,7 @@ export default function DashboardPage() {
     if (status === "authenticated" && session?.user?.id) {
       fetchNotes();
     } else if (status === "unauthenticated") {
-      router.push("/login");
+      router.push("/");
     }
   }, [status, session, fetchNotes, router]);
 
@@ -113,7 +113,7 @@ export default function DashboardPage() {
         );
       } else {
         console.error("Error archiving note:", result.error);
-        // You could show a toast notification here
+        // TODO:TOAST
       }
     } catch (error) {
       console.error("Error archiving note:", error);
@@ -135,7 +135,7 @@ export default function DashboardPage() {
         setNotes(notes.filter((note) => note._id !== noteId));
       } else {
         console.error("Error deleting note:", result.error);
-        // You could show a toast notification here
+        // TODO: Toast
       }
     } catch (error) {
       console.error("Error deleting note:", error);
@@ -268,7 +268,7 @@ export default function DashboardPage() {
           </Button>
 
           {/* Navigation */}
-          <nav className="flex flex-col gap-2">
+          {/* <nav className="flex flex-col gap-2">
             <button
               onClick={() => setActiveTab("all")}
               className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors font-medium ${
@@ -299,7 +299,7 @@ export default function DashboardPage() {
             >
               <span>Archived</span>
             </button>
-          </nav>
+          </nav> */}
         </div>
 
         {/* Settings & Sign Out */}
